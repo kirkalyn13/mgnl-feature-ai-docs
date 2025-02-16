@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mgnl-features-ai-docs
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mgnlfeatures
+    username: //db_username
+    password: //db_password
+  ai:
+    ollama:
+      chat:
+        model: llama3.2
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimension: 1536
+        initialize-schema: true
+        schema-validation: true
+  docker:
+    compose:
+      lifecycle-management: start_only
